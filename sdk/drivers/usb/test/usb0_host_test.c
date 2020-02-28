@@ -373,6 +373,7 @@ void usbh_set_device_address(usb_module_t *port, usbhQueueHead_t *usb_qh_ep0, ui
  */
 void usbh_get_dev_desc(usb_module_t *port, usbhQueueHead_t *usbh_qh_ep0, usbDeviceDescriptor_t *device_descriptor)
 {
+#if 0
     usbhTransferDescriptor_t *usb_qtd1, *usb_qtd2, *usb_qtd3;
     uint32_t temp;
     uint32_t usbhSetupCommand[2];
@@ -429,6 +430,7 @@ void usbh_get_dev_desc(usb_module_t *port, usbhQueueHead_t *usbh_qh_ep0, usbDevi
     free((void *)usb_qtd1->mallocPointer);
     free((void *)usb_qtd2->mallocPointer);
     free((void *)usb_qtd3->mallocPointer);
+#endif
 }
 /********************************************************************/
 void usbh_get_config_desc(usb_module_t *port, usbhQueueHead_t * usb_qh_ep0, uint8_t * config_descriptor)
@@ -595,7 +597,7 @@ void usbh_set_configuration(usb_module_t *port, usbhQueueHead_t * usb_qh_ep0, ui
 
     usb_qtd1->nextQtd = (uint32_t)usb_qtd2;
     
-    while(usb_qh_ep0->qtdToken & 0x80); /* wait for active bit to clear */
+    while(usb_qh_ep0->qtdToken & 0x80) {} /* wait for active bit to clear */
     
 	/* Point the QH to the linked list of qTDs */
 	usb_qh_ep0->nextQtd = (uint32_t)usb_qtd1;

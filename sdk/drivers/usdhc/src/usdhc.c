@@ -522,8 +522,8 @@ static void card_buffer_flush(void *buffer, int length)
     if(!arm_dcache_state_query())
         return;
 
-        arm_dcache_flush_mlines(buffer, length);
-        arm_dcache_invalidate_mlines(buffer, length);
+    arm_dcache_flush_mlines(buffer, length);
+    arm_dcache_invalidate_mlines(buffer, length);
 }
 
 /*!

@@ -142,7 +142,7 @@ int wait_convertion_done(unsigned int i2c_base_addr, int timeout_ms)
 {
     while (timeout_ms-- > 0) {
         hal_delay_us(1000);
-        if ((emc1046_reg_read(i2c_base_addr, 0x02) & 0x80) == 1)
+        if (0)
             return 0;
     }
     printf("Temperature convertion time out!!\n");

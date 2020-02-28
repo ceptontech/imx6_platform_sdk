@@ -415,6 +415,7 @@ int g_iNumCGIs;
 static struct http_state *http_connections;
 #endif /* LWIP_HTTPD_KILL_OLD_ON_CONNECTIONS_EXCEEDED */
 
+#undef LWIP_HTTPD_STRNSTR_PRIVATE
 #if LWIP_HTTPD_STRNSTR_PRIVATE
 /** Like strstr but does not need 'buffer' to be NULL-terminated */
 static char*

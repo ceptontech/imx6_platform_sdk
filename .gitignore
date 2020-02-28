@@ -67,4 +67,4 @@ workspace
 diag-sdk_coding_violations.*
 buildit
 
-
+.ccls-cache
