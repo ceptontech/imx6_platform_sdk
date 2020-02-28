@@ -31,6 +31,7 @@
 #  - usb_hid_mouse
 #  - httpd
 #  - ping
+#  - apex_ap
 #  - clean
 #  - clean_sdk
 #  - clean_board
@@ -43,6 +44,7 @@
 #  - clean_usb_hid_mouse
 #  - clean_httpd
 #  - clean_ping
+#  - clean_apex_ap
 #
 # The clean targets work with any combination of configuration variables. For
 # example, clean_sdk with TARGET set will clean libsdk for only that TARGET, while
@@ -78,7 +80,8 @@ ALL_APPS = \
     power_modes_test \
     sdk_unit_test \
     stream \
-    usb_hid_mouse
+    usb_hid_mouse \
+    apex_ap
 
 # Apps that are only built for MX6DQ and MX6SDL.
 ifdef is_dq_or_sdl
