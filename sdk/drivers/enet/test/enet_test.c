@@ -40,7 +40,8 @@
 
 #if defined(BOARD_SMART_DEVICE) || defined(BOARD_SABRE_AI)
 #define ENET_PHY_ADDR 1
-#elif defined(BOARD_EVB)
+//55555555555
+#elif defined(BOARD_EVB) || defined(BOARD_SABRE_LITE)
 #define ENET_PHY_ADDR 0
 #else
 #Error Unknown ENET_PHY_ADDR

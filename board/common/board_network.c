@@ -29,6 +29,7 @@
  */
 
 #include "sdk.h"
+#include "mx6dq/registers/regsiomuxc.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Code
@@ -58,10 +59,14 @@ void imx_KSZ9021RN_reset(void)
             BF_IOMUXC_SW_PAD_CTL_PAD_EIM_DATA23_SPEED_V(100MHZ) |
             BF_IOMUXC_SW_PAD_CTL_PAD_EIM_DATA23_DSE_V(40_OHM) |
             BF_IOMUXC_SW_PAD_CTL_PAD_EIM_DATA23_SRE_V(SLOW));
-    gpio_set_direction(GPIO3, 23, GPIO_GDIR_OUTPUT);
-    gpio_set_level(GPIO3, 23, GPIO_LOW_LEVEL);
+    //gpio_set_direction(GPIO3, 23, GPIO_GDIR_OUTPUT);
+    gpio_set_direction(GPIO_PORT3, 23, GPIO_GDIR_OUTPUT);
+	
+//    gpio_set_level(GPIO3, 23, GPIO_LOW_LEVEL);
+    gpio_set_level(GPIO_PORT3, 23, GPIO_LOW_LEVEL);
     hal_delay_us(1000000);      // hold in reset for a delay
-    gpio_set_level(GPIO3, 23, GPIO_LOW_HIGH);
+//    gpio_set_level(GPIO3, 23, GPIO_LOW_HIGH);
+    gpio_set_level(GPIO_PORT3, 23, GPIO_HIGH_LEVEL);
 #endif
 }
 

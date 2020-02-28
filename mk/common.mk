@@ -180,6 +180,7 @@ LIBC_LDPATH = $(CC_PREFIX)/$(CROSS_COMPILE_STRIP)/lib/$(CC_LIB_POST)
 CC_INCLUDE = $(CC_PREFIX)/lib/gcc/$(CROSS_COMPILE_STRIP)/$(CC_VERSION)/include
 CC_INCLUDE_FIXED = $(CC_PREFIX)/lib/gcc/$(CROSS_COMPILE_STRIP)/$(CC_VERSION)/include-fixed
 LIBC_INCLUDE = $(CC_PREFIX)/$(CROSS_COMPILE_STRIP)/include
+CXX_INCLUDE = $(CC_PREFIX)/$(CROSS_COMPILE_STRIP)/include/c++/$(CC_VERSION)
 
 #-------------------------------------------------------------------------------
 # Target and board configuration

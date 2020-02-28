@@ -126,7 +126,7 @@ CXXFLAGS += -fno-exceptions -fno-rtti
 # Link against libc and libgcc. Specify paths to libc in newlib build
 # directory.  Need to specify libgcc since our linker does not link
 # against anything, even compiler libs because of -nostdlib.
-LDADD += -lm -lstdc++ -lc -lgcc
+LDADD += -static -lm -lstdc++ -lc -lgcc
 
 # These include paths have to be quoted because they may contain spaces,
 # particularly under cygwin.
@@ -137,6 +137,7 @@ LDINC += -L '$(LIBGCC_LDPATH)' -L '$(LIBC_LDPATH)'
 SYSTEM_INC = \
     -isystem '$(CC_INCLUDE)' \
     -isystem '$(CC_INCLUDE_FIXED)' \
+    -isystem '$(CXX_INCLUDE)' \
     -isystem '$(LIBC_INCLUDE)'
 
 INCLUDES += \
