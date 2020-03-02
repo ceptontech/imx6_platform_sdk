@@ -39,7 +39,7 @@ int main(void)
 {
   platform_init();
 
-  printf("Starting the infinite while loop.\n");
+  printf("Starting an infinite while loop on all cores.\n");
 
   // Determine how many CPUs we have access to
   int cpu_count = cpu_get_cores();
